@@ -492,7 +492,7 @@ darkTheme = "github-dark"
 #  Twikoo 评论系统设置
 [params.page.comment.twikoo]
 enable = true
-envId = "http://net.gudk.me:8080"
+envId = "https://net.gudk.me"
 region = ""
 path = ""
 visitor = true
