@@ -1,7 +1,7 @@
 baseURL = "https://cnziyo.cn/"
 
 # 更改使用 Hugo 构建网站时使用的默认主题
-theme = "LoveIt"
+theme = "DoIt"
 
 # 网站标题
 title = "智慧演绎，无限飞跃。"
@@ -70,6 +70,9 @@ url = "/categories/"
 title = ""
 
 [params]
+# DoIt 更改 | 0.2.0 DoIt 主题版本
+version = "0.2.X"
+
 # 网站默认主题样式 ["auto", "light", "dark"]
 defaultTheme = "auto"
 # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
@@ -97,7 +100,7 @@ mobileMode = "auto"
 # LOGO 的 URL
 logo = "/images/logo.jpg"
 # 标题名称
-name = "I'm Gudk"
+name = "智跃人生"
 # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
 pre = ""
 # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
@@ -118,8 +121,8 @@ copyright = true
 author = true
 # 网站创立年份
 since = 2009
+icp = '<a class="icp" target="_blank" href="https://beian.miit.gov.cn/">浙ICP备14012131号-1</a>'
 # ICP 备案信息，仅在中国使用 (支持 HTML 格式)
-icp = ""
 # 许可协议信息 (支持 HTML 格式)
 license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
@@ -159,8 +162,8 @@ tileColor = "#da532c"
 #  搜索配置
 [params.search]
 enable = true
-# 搜索引擎的类型 ["lunr", "algolia"]
-type = "lunr"
+# 搜索引擎的类型 ["lunr", "algolia", "fuse"]
+type = "fuse"
 # 文章内容最长索引长度
 contentLength = 4000
 # 搜索框的占位提示语
@@ -174,9 +177,20 @@ highlightTag = "em"
 #  是否在搜索索引中使用基于 baseURL 的绝对路径
 absoluteURL = false
 [params.search.algolia]
-index = ""
-appID = ""
-searchKey = ""
+index = "index"
+appID = "OCRI5KR4D2"
+searchKey = "3e8b8b09e4821b9c3d12b4f182e057fa"
+[params.search.fuse]
+# DoIt 新增 | 0.2.12 https://fusejs.io/api/options.html
+isCaseSensitive = false
+minMatchCharLength = 2
+findAllMatches = false
+location = 0
+threshold = 0.3
+distance = 100
+ignoreLocation = false
+useExtendedSearch = false
+ignoreFieldNorm = false
 
 # 主页配置
 [params.home]
@@ -313,7 +327,7 @@ enable = true
 #  是否保持使用文章前面的静态目录
 keepStatic = false
 # 是否使侧边目录自动折叠展开
-auto = true
+auto = false
 #  代码配置
 [params.page.code]
 # 是否显示代码块的复制按钮
@@ -377,7 +391,7 @@ Trello = false
 Mix = false
 #  评论系统设置
 [params.page.comment]
-enable = false
+enable = true
 # Disqus 评论系统设置
 [params.page.comment.disqus]
 # 
@@ -444,6 +458,31 @@ issueTerm = "pathname"
 label = ""
 lightTheme = "github-light"
 darkTheme = "github-dark"
+# DoIt 新增 | 0.2.12 Twikoo 评论系统设置
+[params.page.comment.twikoo]
+enable = true
+envId = "http://net.gudk.me:8080"
+region = ""
+path = ""
+lang = "zh-CN"
+visitor = true
+commentCount = true
+# DoIt 新增 | 0.2.12 Vssue 评论系统设置
+[params.page.comment.vssue]
+enable = false
+platform = ""     # ("bitbucket", "gitea", "gitee", "github", "gitlab")
+owner = ""
+repo = ""
+clientId = ""
+clientSecret = ""
+# DoIt 新增 | 0.2.13 Remark42 评论系统设置
+[params.page.comment.remark42]
+enable = false
+host = ""
+site_id = ""
+max_shown_comments = 15
+show_email_subscription = true
+simple_view = false
 # giscus comment 评论系统设置 (https://giscus.app/zh-CN)
 [params.page.comment.giscus]
 # 你可以参考官方文档来使用下列配置
@@ -481,6 +520,17 @@ images = []
 [params.page.seo.publisher]
 name = ""
 logoUrl = ""
+# DoIt 新增 | 0.2.14 相关文章推荐配置
+[params.page.related]
+enable = true
+count = 5
+
+# DoIt 新增 | 0.2.13 赞赏配置
+[params.sponsor]
+enable = false
+bio = "如果你觉得这篇文章对你有所帮助，欢迎赞赏~"
+link = "https://www.buymeacoffee.com" # 你的赞赏页面的地址
+custom = ""                           # 自定义 HTML
 
 #  TypeIt 配置
 [params.typeit]
