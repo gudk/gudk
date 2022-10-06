@@ -561,7 +561,7 @@ name = ""
 logoUrl = ""
 #  相关文章推荐配置
 [params.page.related]
-enable = true
+enable = false
 count = 5
 
 
