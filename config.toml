@@ -602,10 +602,10 @@ thumbnailUrl = ""
 
 #  网站分析配置
 [params.analytics]
-enable = false
+enable = true
 # Google Analytics
 [params.analytics.google]
-id = ""
+id = "G-9149079MEE"
 # 是否匿名化用户 IP
 anonymizeIP = true
 # Fathom Analytics
@@ -615,7 +615,7 @@ id = ""
 server = ""
 #  Baidu Analytics
 [params.analytics.baidu]
-id = ""
+id = "c454d319b008221020070689ce10026f"
 #  Umami Analytics
 [params.analytics.umami]
 data_website_id = ""
