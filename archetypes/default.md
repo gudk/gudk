@@ -4,8 +4,8 @@ date: {{ .Date }}
 authors: [gudk]
 draft: false
 lastmod: {{.Date}}
-tags: []
-categories: []
+tags: ["笔记","财税"]
+categories: ["笔记"]
 
 ---
 
