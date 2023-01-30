@@ -6,6 +6,6 @@ draft: false
 lastmod: {{.Date}}
 tags: ["笔记","财税"]
 categories: ["笔记"]
-
+typora-root-url: ../../static
 ---
 
