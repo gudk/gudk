@@ -1,25 +1,13 @@
----
-title: "重新折腾服务器"
-date: 2023-03-18T20:19:54+08:00
-authors: [gudk]
-draft: false
-lastmod: 2023-03-18T20:19:54+08:00
-tags: ["笔记","服务器"]
-categories: ["服务器"]
-typora-root-url: ../../static
-toc:
-  enable: true
-  auto: true
----
+# 重新折腾服务器
+
 
 服务器用Archlinux有段时间了，感觉还不错。所以把另外一个服务器重新折腾了一下。
 
 1. 有些服务器自带的系统是没有Archlinux的，要先装Ubuntu然后转换为Archlinux。
 
-   ```shell
-   wget https://felixc.at/vps2arch
+   `wget https://felixc.at/vps2arch
    chmod +x vps2arch
-   ./vps2arch
+   ./vps2arch`
 
 
 2. 安装zsh：
@@ -56,10 +44,11 @@ toc:
    source ~/.zshrc
    ```
 
-9. 基本配置完成，重新登录一下就能看到效果了。
+9. 基本配置完成。
 
 10. 然后 Arch Linux下面没有crontab，要自己安装一个cronie程序。安装完docker、nginx等都要systemctl start一下，设置hostname用hostnamectl set-hostname命令。
 
 11. ssh相关配置可以用sftp上传，这样下次登录就不用输入帐号密码了。
 
 12. hugo相关命令：hugo server -e production --liveReloadPort 443 --baseURL "https://xxx.xx"，有个注意点，hugo的主题是submodule模式提供的，要先git submodule init;git submodule update。
+

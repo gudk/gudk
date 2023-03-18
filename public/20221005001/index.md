@@ -1,0 +1,86 @@
+# FreeBSD服务器配置记录
+
+
+这次服务器改用FreeBSD，第一次尝试FreeBSD，做个记录。
+
+1. 更换安装镜像源：
+
+   `mkdir -p /usr/local/etc/pkg/repos`
+
+   `vi /usr/local/etc/pkg/repos/FreeBSD.conf`
+
+   内容如下，如果要使用滚动更新的 latest 仓库，把 `url` 配置最后的 `quarterly` 换成 `latest` 即可。
+
+   ```
+   FreeBSD: {
+     url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly",
+   }
+   ```
+
+   `pkg update -f` 更新索引。
+
+   ports的更换参考：[FreeBSD ports 源使用帮助 — USTC Mirror Help 文档](https://mirrors.ustc.edu.cn/help/freebsd-ports.html)
+
+   编辑 `vi /etc/freebsd-update.conf` 文件:
+
+   将 `ServerName update.FreeBSD.org` 修改为 `ServerName update.FreeBSD.cn`
+
+
+2. 安装zsh：
+
+   `pkg install zsh`
+
+3. 更改默认SHELL：
+
+   `chsh -s $(which zsh)`
+
+4. 安装neovim：
+
+   `pkg install neovim`
+
+5. 安装zimfw：
+
+   `curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh`
+
+6. 安装git：
+
+   `pkg install git`
+
+7. 克隆自己的相关配置：
+
+   `git clone https://github.com/gudk/zsh_config.git`
+
+8. 切换到zsh后，复制相关文件：
+
+   ```
+   cp .zshrc ~/
+   cp .zimrc ~/
+   cp .p10k.zsh ~/
+   cp .gitconfig ~/
+   source ~/.zshrc
+   ```
+
+9. 基本配置完成。
+
+10. 阿里云的swap默认是没有的，有必要设置一个：
+
+   ```
+   dd if=/dev/zero of=/usr/swap0 bs=1m count=1024
+   chmod 0600 /usr/swap0
+   echo "md99 none swap sw,file=/usr/swap0,late 0 0" >> /etc/fstab
+   swapon -aL
+   ```
+
+11. 使用swapinfo命令查看swap文件的状态。
+
+12. 后续：经过一段时间的使用发现使用FreeBSD还是不太方便，自己使用的一个每天发送天气预报到手机的程序没有FreeBSD的版本，没法在服务器运行，自己又懒得源代码编译，所以还是回到Linux，以前一直是用Ubuntu的，下次打算试一下Arch Linux，目前阿里云有可选的Arch Linux，而搬瓦工是没有自带的，需要先安装Debian或Ubuntu，然后使用下面的代码转到Arch Linux：
+
+    ```
+    wget https://felixc.at/vps2arch
+    chmod +x vps2arch
+    ./vps2arch
+    ```
+
+13. 然后 Arch Linux下面没有crontab，要自己安装一个cronie程序。其他的安装zsh，neovim，certbot，zimfw，git，rust等，基本差不多。
+14. 目前拿一台服务器试了一下Arch Linux，暂时感觉还不错。
+
