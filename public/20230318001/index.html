@@ -32,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/cnziyo.cn\/20230318001\/"
-        },"genre": "posts","keywords": "笔记, 服务器","wordcount":  442 ,
+        },"genre": "posts","keywords": "笔记, 服务器","wordcount":  459 ,
         "url": "https:\/\/cnziyo.cn\/20230318001\/","datePublished": "2023-03-18T20:19:54+08:00","dateModified": "2023-03-18T20:19:54+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"authors": [{
@@ -142,7 +142,7 @@
             <div class="post-meta-line">
                 <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://cnziyo.cn/authors/gudk'>逍遥问情</a></span>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><i class="far fa-folder fa-fw"></i>服务器</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-03-18">2023-03-18</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-03-18">2023-03-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 442 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-03-18">2023-03-18</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2023-03-18">2023-03-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 459 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/20230318001/" class="leancloud_visitors" data-flag-title="重新折腾服务器">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
                     </span>&nbsp;<span id="/20230318001/" class="comment_count" data-flag-title="重新折腾服务器">
@@ -158,8 +158,19 @@
 <ol>
 <li>
 <p>有些服务器自带的系统是没有Archlinux的，要先装Ubuntu然后转换为Archlinux。</p>
-<p><code>wget https://felixc.at/vps2arch chmod +x vps2arch ./vps2arch</code></p>
-</li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://felixc.at/vps2arch
+</span></span><span class="line"><span class="cl">chmod +x vps2arch
+</span></span><span class="line"><span class="cl">./vps2arch
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>安装zsh：</p>
 <p><code>pacman -S zsh</code></p>
@@ -204,7 +215,7 @@
 </div>
 </div></li>
 <li>
-<p>基本配置完成。</p>
+<p>基本配置完成，重新登录一下就能看到效果了。</p>
 </li>
 <li>
 <p>然后 Arch Linux下面没有crontab，要自己安装一个cronie程序。安装完docker、nginx等都要systemctl start一下，设置hostname用hostnamectl set-hostname命令。</p>

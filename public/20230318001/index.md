@@ -5,9 +5,10 @@
 
 1. 有些服务器自带的系统是没有Archlinux的，要先装Ubuntu然后转换为Archlinux。
 
-   `wget https://felixc.at/vps2arch
+   ```shell
+   wget https://felixc.at/vps2arch
    chmod +x vps2arch
-   ./vps2arch`
+   ./vps2arch
 
 
 2. 安装zsh：
@@ -44,7 +45,7 @@
    source ~/.zshrc
    ```
 
-9. 基本配置完成。
+9. 基本配置完成，重新登录一下就能看到效果了。
 
 10. 然后 Arch Linux下面没有crontab，要自己安装一个cronie程序。安装完docker、nginx等都要systemctl start一下，设置hostname用hostnamectl set-hostname命令。
 
