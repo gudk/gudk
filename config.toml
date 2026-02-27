@@ -729,7 +729,7 @@ isHTML = false
 home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "MarkDown"]
 section = ["HTML", "RSS"]
-taxonomy = ["HTML", "RSS"]
+#taxonomy = ["HTML", "RSS"]
 
 # 用于分类的设置
 [taxonomies]
