@@ -1,7 +1,8 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "{{ substr .Name 11 | title }}"
 date: {{ .Date }}
 authors: [gudk]
+slug: {{ substr .Name 0 10 }}
 draft: false
 lastmod: {{.Date}}
 tags: ["笔记","财税"]
